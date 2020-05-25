@@ -10,27 +10,29 @@
 </head>
 
 <body>
-	<p id="aff"></p>
-	<button id="download" >download</button>
-	<div id="content">
+	<div id="aff" style="width: 255px; height: 255px;" >
 		
-		
-		<canvas id="qrcode" width="255" height="255" style="margin-left: auto; margin-right: auto;"></canvas>
+	</div>
+
 		<script>
 
 			var data = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxIiwibmFtZSI6IkFyaWVsIFNhdWxuaWVyIiwicGFzcyI6ImNvbmNlcnQifQ.xk59xPz7uGOnf_S8LwKaFiEW2ge6iuRnqAAv3Hw-WkE";
-			var qrcode = new QRCode(document.getElementById("qrcode"));
 			var aff = new QRCode(document.getElementById("aff"));
-			qrcode.makeCode(data);
 			aff.makeCode(data);
 			
 
 		</script>
-	</div>
+	
+	<input id="btn-Preview-Image" type="button" value="Preview" />
+    <a id="btn-Convert-Html2Image" href="#">Download</a>
+    <br />
+    <h3>Preview :</h3>
+    <p id="previewImage">
+	</p>
 		
 		
 		
-	<script src="qrcodetest.js"></script>
+	<script src="qrcodepdf.js"></script>
 </body>
 
 </html>

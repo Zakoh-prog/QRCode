@@ -1,12 +1,14 @@
+import html2canvas from 'html2canvas';
+
 $('#download').click(function() {
     var options = {
       allowTaint: true,
       logging: true
     };
     var pdf = new jsPDF('p', 'pt', 'a4');
-    var base64 = getBase64Image($("#qrcode").get(0));
-    $("#qrcode").attr('src', base64);
-    pdf.addHTML($("#qrcode"), 25, 25, options, function() {
+    var base64 = getBase64Image($("#aff").get(0));
+    $("#aff").attr('src', base64);
+    pdf.addHTML($("#aff"), 25, 25, options, function() {
       pdf.save('pageContent.pdf');
     });
 });
@@ -21,3 +23,4 @@ function getBase64Image(img) {
     var dataURL = canvas.toDataURL("image/png");
     return dataURL;
 }
+
